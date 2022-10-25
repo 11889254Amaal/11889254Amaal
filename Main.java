@@ -206,7 +206,7 @@ public class Main {
 
 							//}
 
-							break;
+		//					break;
 
 						case 2:
 							System.out.println("----------------------------------------------");
