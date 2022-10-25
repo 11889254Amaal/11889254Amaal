@@ -208,7 +208,7 @@ public class Main {
 
 		//					break;
 
-						case 2:
+						//case 2:
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
 							System.out.println("----------------------------------------------");
