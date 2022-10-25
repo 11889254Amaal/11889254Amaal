@@ -193,7 +193,7 @@ public class Main {
 									}
 								}
 								System.out.println("Do You want To Add school press 1 if not press 0 ");
-								int schoolOutput = sc.nextInt();
+								//int schoolOutput = sc.nextInt();
 								//if (schoolOutput == 1) {
 									//isExit = true;
 									//isHasExit = true;
