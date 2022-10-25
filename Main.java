@@ -202,9 +202,9 @@ public class Main {
 								//	isExit = false;
 									//isHasExit = false;
 								//	isExitSchool = false;
-								}
+								//}
 
-							}
+							//}
 
 							break;
 
