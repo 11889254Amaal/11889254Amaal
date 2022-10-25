@@ -214,7 +214,7 @@ public class Main {
 							System.out.println("----------------------------------------------");
 						//	for (School ssc : SchoolList) {
 							//	for (Student s : studentList) {
-									for (Course c : s.courseList1) {
+								//	for (Course c : s.courseList1) {
 										for (Marks m : c.getCourseMarksList()) {
 
 											System.out.println("SchoolName:    " + ssc.getSchoolName());
