@@ -198,11 +198,11 @@ public class Main {
 									isExit = true;
 									isHasExit = true;
 									isExitSchool = true;
-								} else {
-									isExit = false;
+								} //else {
+									//isExit = false;
 									//isHasExit = false;
 									//isExitSchool = false;
-								}
+								//}
 
 							}
 
