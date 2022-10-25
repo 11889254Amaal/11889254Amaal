@@ -200,8 +200,8 @@ public class Main {
 									isExitSchool = true;
 								} else {
 									isExit = false;
-									isHasExit = false;
-									isExitSchool = false;
+									//isHasExit = false;
+									//isExitSchool = false;
 								}
 
 							}
