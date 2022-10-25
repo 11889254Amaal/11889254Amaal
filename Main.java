@@ -212,8 +212,8 @@ public class Main {
 							//System.out.println("----------------------------------------------");
 							//System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
 							System.out.println("----------------------------------------------");
-							for (School ssc : SchoolList) {
-								for (Student s : studentList) {
+						//	for (School ssc : SchoolList) {
+							//	for (Student s : studentList) {
 									for (Course c : s.courseList1) {
 										for (Marks m : c.getCourseMarksList()) {
 
