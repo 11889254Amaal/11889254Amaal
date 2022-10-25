@@ -16,7 +16,7 @@ public class School {
 	}
 
 
-	String schoolName;
+	private String schoolName;
 	 void  setSchoolName(String schoolName)
 		{
 		

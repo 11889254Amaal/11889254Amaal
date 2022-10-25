@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 
 public class Marks {
-	int courseMarks;
+	private int courseMarks;
 	 void  setCourseMarks(int courseMarks)
 		{
 			if(courseMarks>0 && courseMarks<100)

@@ -217,9 +217,9 @@ public class Main {
 									for (Course c : s.courseList1) {
 										for (Marks m : c.getCourseMarksList()) {
 
-											System.out.println("SchoolName:    " + ssc.schoolName);
-											System.out.println("student name:  " + s.StudentName);
-											System.out.println("course Name:   " + c.CourseName + " " + "marks"
+											System.out.println("SchoolName:    " + ssc.getSchoolName());
+											System.out.println("student name:  " + s.getStudentName()+ "Student Email :"+s.getStudentEmail());
+											System.out.println("course Name:   " + c.getCourseName() + " " + "marks"
 													+ m.getCourseMarks());
 
 										}

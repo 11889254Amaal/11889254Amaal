@@ -2,9 +2,9 @@
 import java.util.ArrayList;
 
 public class Student {
-	String StudentName;
-	int StudentId;
-	String StudentEmail;
+	private String StudentName;
+	private int StudentId;
+	private String StudentEmail;
 	
 	ArrayList<Course> courseList1=new ArrayList<Course>();
 	
