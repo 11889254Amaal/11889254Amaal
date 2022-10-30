@@ -1,8 +1,23 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -32,7 +47,7 @@ public class Main {
 		return SchoolList;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ArrayList<Course> courseList1 = new ArrayList<>();
 		ArrayList<Marks> marksList = new ArrayList<>();
 		ArrayList<Student> studentList = new ArrayList<>();
@@ -42,6 +57,7 @@ public class Main {
 		HashMap<String, Double> studentFees = new HashMap<String, Double>();
 		HashMap<String, HashMap<String, Double>> studentFeesWithCurrency = new HashMap<String, HashMap<String, Double>>();
 		Main man = new Main();
+		//List<Byte> file11 = new ArrayList<Byte>();
 		double amountcal = 0;
 		String nameCurrency = "";
 		double amount = 0;
@@ -51,6 +67,24 @@ public class Main {
 		boolean isRun = true;
 		boolean isTeacherRun = true;
 		int code;
+		String y = null;
+		 String variavleGatFromArray = null;
+		 ObjectInputStream fileRead=null;
+		 FileOutputStream fileName;
+		 ObjectOutputStream fileWrite=null;
+		 
+		 try {
+		 fileName=new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2");
+		 fileWrite=new ObjectOutputStream(fileName);
+		 fileRead=new ObjectInputStream(new FileInputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2"));
+		 
+		 }
+		 catch( IOException e) {
+				System.out.println(e.getMessage());
+
+		 }
+		 
+		
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("+         WELOCOME  TO My System Teacher                         +");
@@ -193,29 +227,31 @@ public class Main {
 									}
 								}
 								System.out.println("Do You want To Add school press 1 if not press 0 ");
-								//int schoolOutput = sc.nextInt();
-								//if (schoolOutput == 1) {
-									//isExit = true;
-									//isHasExit = true;
-									//isExitSchool = true;
-								//} else {
-								//	isExit = false;
-									//isHasExit = false;
-								//	isExitSchool = false;
-								//}
+								int schoolOutput = sc.nextInt();
+								if (schoolOutput == 1) {
+									isExit = true;
+									isHasExit = true;
+									isExitSchool = true;
+								} else {
+								isExit = false;
+								isHasExit = false;
+								isExitSchool = false;
+								}
 
-							//}
+							}
+						
+							fileWrite.writeObject(stack);
 
-		//					break;
+			break;
 
-						//case 2:
-							//System.out.println("----------------------------------------------");
-							//System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
+						case 2:
 							System.out.println("----------------------------------------------");
-						//	for (School ssc : SchoolList) {
-							//	for (Student s : studentList) {
-								//	for (Course c : s.courseList1) {
-									//	for (Marks m : c.getCourseMarksList()) {
+							System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
+							System.out.println("----------------------------------------------");
+						for (School ssc : SchoolList) {
+							for (Student s : studentList) {
+								for (Course c : s.courseList1) {
+										for (Marks m : c.getCourseMarksList()) {
 
 											System.out.println("SchoolName:    " + ssc.getSchoolName());
 											System.out.println("student name:  " + s.getStudentName()+ "Student Email :"+s.getStudentEmail());
@@ -228,17 +264,24 @@ public class Main {
 							}
 							break;
 						case 3:
+				
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------HISTORY OF PROGRAMM--------------");
 							System.out.println("----------------------------------------------");
-							while (stack.empty() == false) {
-								String y = (String) stack.pop();
-								System.out.println(y);
+						
+							try {
+								Stack<String> st=(Stack <String>) fileRead.readObject();
+								System.out.println(st);
+								
 							}
-							System.out.println(stack.size());
+							catch(ClassNotFoundException | IOException e){
+								System.out.println(e.getMessage());
 
-							System.out.println("----------------------------------------------");
-
+								
+							}
+							
+						
+							
 							break;
 						case 4:
 							System.out.println("----------------------------------------------");
