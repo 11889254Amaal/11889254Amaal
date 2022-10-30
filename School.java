@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.*;
-public class School {
+public class School  {
 	
 ///write array LIST OF STUDENT FROM CLASS STUDENT
 	Scanner sc=new Scanner(System.in);

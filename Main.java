@@ -27,12 +27,10 @@ import java.util.stream.Stream;
 public class Main {
 
 	public int extraLongFactorials(int facNumber) {
-		if(facNumber==0) {
+		if (facNumber == 0) {
 			return 1;
-		}
-		else
-		{
-		return (facNumber* extraLongFactorials(facNumber-1));
+		} else {
+			return (facNumber * extraLongFactorials(facNumber - 1));
 		}
 	}
 
@@ -57,7 +55,7 @@ public class Main {
 		HashMap<String, Double> studentFees = new HashMap<String, Double>();
 		HashMap<String, HashMap<String, Double>> studentFeesWithCurrency = new HashMap<String, HashMap<String, Double>>();
 		Main man = new Main();
-		//List<Byte> file11 = new ArrayList<Byte>();
+		// List<Byte> file11 = new ArrayList<Byte>();
 		double amountcal = 0;
 		String nameCurrency = "";
 		double amount = 0;
@@ -68,23 +66,24 @@ public class Main {
 		boolean isTeacherRun = true;
 		int code;
 		String y = null;
-		 String variavleGatFromArray = null;
-		 ObjectInputStream fileRead=null;
-		 FileOutputStream fileName;
-		 ObjectOutputStream fileWrite=null;
-		 
-		 try {
-		 fileName=new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2");
-		 fileWrite=new ObjectOutputStream(fileName);
-		 fileRead=new ObjectInputStream(new FileInputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2"));
-		 
-		 }
-		 catch( IOException e) {
-				System.out.println(e.getMessage());
+		String variavleGatFromArray = null;
+		ObjectInputStream fileRead = null;
+		FileOutputStream fileName;
+		ObjectOutputStream fileWrite = null;
+		ObjectInputStream fileRead1 = null;
+		FileOutputStream fileName1;
+		ObjectOutputStream fileWrite1 = null;
 
-		 }
-		 
-		
+		try {
+			fileName1 = new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2");
+			fileWrite1 = new ObjectOutputStream(fileName1);
+			fileRead1 = new ObjectInputStream(new FileInputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2"));
+
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+
+		}
+
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		System.out.println("+         WELOCOME  TO My System Teacher                         +");
@@ -112,7 +111,8 @@ public class Main {
 						menuProgram.put(4, "print currency and Amout\n");
 						menuProgram.put(5, "print dublicate email\n");
 						menuProgram.put(6, "coding Probleams\n");
-						menuProgram.put(7, "Exit from Program");
+						menuProgram.put(7, "Serilization for student Class\n");
+						menuProgram.put(8, "Exit from Program");
 
 						System.out.println(menuProgram);
 						System.out.println("Please Enter your option:\n");
@@ -233,28 +233,27 @@ public class Main {
 									isHasExit = true;
 									isExitSchool = true;
 								} else {
-								isExit = false;
-								isHasExit = false;
-								isExitSchool = false;
+									isExit = false;
+									isHasExit = false;
+									isExitSchool = false;
 								}
 
 							}
-						
-							fileWrite.writeObject(stack);
 
-			break;
+							break;
 
 						case 2:
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
 							System.out.println("----------------------------------------------");
-						for (School ssc : SchoolList) {
-							for (Student s : studentList) {
-								for (Course c : s.courseList1) {
+							for (School ssc : SchoolList) {
+								for (Student s : studentList) {
+									for (Course c : s.courseList1) {
 										for (Marks m : c.getCourseMarksList()) {
 
 											System.out.println("SchoolName:    " + ssc.getSchoolName());
-											System.out.println("student name:  " + s.getStudentName()+ "Student Email :"+s.getStudentEmail());
+											System.out.println("student name:  " + s.getStudentName()
+													+ "Student Email :" + s.getStudentEmail());
 											System.out.println("course Name:   " + c.getCourseName() + " " + "marks"
 													+ m.getCourseMarks());
 
@@ -264,24 +263,20 @@ public class Main {
 							}
 							break;
 						case 3:
-				
+
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------HISTORY OF PROGRAMM--------------");
 							System.out.println("----------------------------------------------");
-						
+							fileWrite1.writeObject(stack);
 							try {
-								Stack<String> st=(Stack <String>) fileRead.readObject();
+								Stack<String> st = (Stack<String>) fileRead1.readObject();
 								System.out.println(st);
-								
-							}
-							catch(ClassNotFoundException | IOException e){
+
+							} catch (ClassNotFoundException | IOException e) {
 								System.out.println(e.getMessage());
 
-								
 							}
-							
-						
-							
+
 							break;
 						case 4:
 							System.out.println("----------------------------------------------");
@@ -346,9 +341,9 @@ public class Main {
 									System.out.println("----------------------------------------------");
 									System.out.println("---------------------FIBONACI-----------------");
 									System.out.println("----------------------------------------------");
-									
+
 									System.out.println("plz enter Count Number");
-									int count=sc.nextInt();
+									int count = sc.nextInt();
 									int n1 = 0;
 									int n2 = 1;
 									int n3, i;
@@ -356,13 +351,13 @@ public class Main {
 
 									for (i = 2; i < count; ++i)// loop starts from 2 because 0 and 1 are already printed
 									{
-										
+
 										n3 = n1 + n2;
-										if(n3<=100) {
-										System.out.print(" " + n3);
-										n1 = n2;
-										n2 = n3;
-									}
+										if (n3 <= 100) {
+											System.out.print(" " + n3);
+											n1 = n2;
+											n2 = n3;
+										}
 									}
 									break;
 								case 3:
@@ -374,7 +369,48 @@ public class Main {
 
 							} while (isRun);
 							break;
+
 						case 7:
+							System.out.println("----------------------------------------------");
+							System.out.println("----------Serilization from student Class-----");
+							System.out.println("----------------------------------------------");
+							Student student1 = new Student("amaal", "26j1230@gmail");
+							Student student2 = new Student("ahaid", "ahaidj1230@gmail");
+							Student student3 = new Student("ali", "alij1230@gmail");
+
+							try {
+								fileName = new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school0");
+								fileWrite = new ObjectOutputStream(fileName);
+								fileRead = new ObjectInputStream(
+										new FileInputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school0"));
+								fileWrite.writeObject(student3);
+								fileWrite.writeObject(student2);
+								fileWrite.writeObject(student1);
+								fileWrite.flush();
+								fileWrite.close();
+
+								Student s1 = (Student) fileRead.readObject();
+								Student s2 = (Student) fileRead.readObject();
+								Student s3 = (Student) fileRead.readObject();
+								System.out.println(
+										"Student Name:" + s1.getStudentName() + "Student Email" + s1.getStudentEmail());
+								System.out.println(
+										"Student Name:" + s2.getStudentName() + "Student Email" + s2.getStudentEmail());
+								System.out.println(
+										"Student Name:" + s3.getStudentName() + "Student Email" + s3.getStudentEmail());
+
+								System.out.println("Succesis");
+
+							} catch (IOException e) {
+								System.out.println(e.getMessage());
+
+							} catch (ClassNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+							break;
+						case 8:
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------THANK YOU Exit From Program-----");
 							System.out.println("----------------------------------------------");
