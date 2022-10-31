@@ -75,6 +75,7 @@ public class Main {
 		ObjectInputStream fileRead1 = null;
 		FileOutputStream fileName1;
 		ObjectOutputStream fileWrite1 = null;
+		boolean chooseInput=true;
 
 		try {
 			fileName1 = new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2");
@@ -97,7 +98,7 @@ public class Main {
 			boolean tryagain=false;
 			String teacherName1 = null;
 			String teacherID1= null;
-				   
+	   
 					   
 						
 					  do {
@@ -112,7 +113,7 @@ public class Main {
 				        	tryagain=false;
 				        }
 				        else {
-							   System.out.println("You probably entered an invalid String data format**");
+							  // System.out.println("You probably entered an invalid String data format**");
 				        	tryagain=false;
 				        }
 					   }
@@ -163,10 +164,23 @@ public class Main {
 						menuProgram.put(8, "Exit from Program");
 
 						System.out.println(menuProgram);
-						System.out.println("Please Enter your option:\n");
-						int sel = sc.nextInt();
+						
+						String sel = null;
+
+						do {
+						try {
+							System.out.println("Please Enter your option:\n");
+							 sel = sc.nextLine();
+							Integer.parseInt(sel);
+							System.out.println(sel + " is a valid Number");
+							chooseInput=false;
+						}
+						catch(NumberFormatException e) {
+							System.out.println(sel + " is a invalid Number");
+						}
+						}while(chooseInput);
 						switch (sel) {
-						case 1:
+						case "1":
 
 							System.out.println("===================");
 							// TODO Auto-generated method stub
@@ -290,7 +304,7 @@ public class Main {
 
 							break;
 
-						case 2:
+						case "2":
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------REPORTS FOR ALL STUDENT--------------");
 							System.out.println("----------------------------------------------");
@@ -310,7 +324,7 @@ public class Main {
 								}
 							}
 							break;
-						case 3:
+						case "3":
 
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------HISTORY OF PROGRAMM--------------");
@@ -326,7 +340,7 @@ public class Main {
 							}
 
 							break;
-						case 4:
+						case "4":
 							System.out.println("----------------------------------------------");
 							System.out.println("--AMOUNT AND CURRENCY OF ALL STUDENT----------");
 							System.out.println("----------------------------------------------");
@@ -342,7 +356,7 @@ public class Main {
 
 							}
 							break;
-						case 5:
+						case "5":
 							// Set<String> duplicates = new HashSet<>();
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------DUPLICATE EMAIL--------------");
@@ -362,7 +376,7 @@ public class Main {
 
 							break;
 
-						case 6:
+						case "6":
 							do {
 								System.out.println("----------------------------------------------");
 								System.out.println("--------------Welcome to sub menu-----");
@@ -418,7 +432,7 @@ public class Main {
 							} while (isRun);
 							break;
 
-						case 7:
+						case "7":
 							System.out.println("----------------------------------------------");
 							System.out.println("----------Serilization from student Class-----");
 							System.out.println("----------------------------------------------");
@@ -458,7 +472,7 @@ public class Main {
 							}
 
 							break;
-						case 8:
+						case "8":
 							System.out.println("----------------------------------------------");
 							System.out.println("--------------THANK YOU Exit From Program-----");
 							System.out.println("----------------------------------------------");
