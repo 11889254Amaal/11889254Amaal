@@ -105,20 +105,18 @@ public class Main {
 					   try {
 							System.out.println("\n" + "Please Enter your User Name");
 							 teacherName1 = sc1.nextLine();
-				        if (teacherName1.matches("^[a-zA-Z]*$")){
+				        if (!teacherName1.matches("^[a-zA-Z]*$")){
 				        	
 				          // Scanner sc1=new Scanner(System.in);
-				        	System.out.println("You probably entered an valid String data format");
+				        	System.out.println("You probably entered an invalid String data format");
 				            
-				        	tryagain=false;
 				        }
-				        else {
-							  // System.out.println("You probably entered an invalid String data format**");
-				        	tryagain=false;
-				        }
+				     
 					   }
 					   catch(Exception e) {
-						   System.out.println("You probably entered an invalid String data format**");
+						   System.out.println(e.getMessage());
+				        	tryagain=false;
+
 					   }
 					   
 					   System.out.println("please Enter your Password");
