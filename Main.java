@@ -25,7 +25,9 @@ import java.util.Stack;
 import java.util.stream.Stream;
 
 public class Main {
-
+	
+				
+				      
 	public int extraLongFactorials(int facNumber) {
 		if (facNumber == 0) {
 			return 1;
@@ -89,17 +91,63 @@ public class Main {
 		System.out.println("+         WELOCOME  TO My System Teacher                         +");
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		while (isTeacherRun) {
-			System.out.println("\n" + "Please Enter your User Name");
-			String teacherName1 = sc1.next();
+			
+			//System.out.println("\n" + "Please Enter your User Name");
+			//String teacherName1 = sc1.next();
+			boolean tryagain=false;
+			String teacherName1 = null;
+			String teacherID1= null;
+				   
+					   
+						
+					  do {
+					   try {
+							System.out.println("\n" + "Please Enter your User Name");
+							 teacherName1 = sc1.nextLine();
+				        if (teacherName1.matches("^[a-zA-Z]*$")){
+				        	
+				          // Scanner sc1=new Scanner(System.in);
+				        	System.out.println("You probably entered an valid String data format");
+				            
+				        	tryagain=false;
+				        }
+				        else {
+							   System.out.println("You probably entered an invalid String data format**");
+				        	tryagain=false;
+				        }
+					   }
+					   catch(Exception e) {
+						   System.out.println("You probably entered an invalid String data format**");
+					   }
+					   
+					   System.out.println("please Enter your Password");
+						 teacherID1 = sc1.nextLine();
+						
+						try 
+						{ 
+							Integer.parseInt(teacherID1 );
+							System.out.println(teacherID1 + " is a valid String");
+							
+							
+						
+						}
+						
+						catch (NumberFormatException e)  
+						{ 
+							System.out.println(teacherID1 + " is not a valid integer"); 
+						} 
+						
+				    } while (tryagain);
+			
+		
 
-			System.out.println("please Enter your Password");
-			int teacherID = sc1.nextInt();
+			
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 			String teacherName2 = "Amaal";
 			boolean check = teacherName1.equals(teacherName2);
 			if (check == true) {
-				if (teacherID == 1234) {
+				if (teacherID1.equals("1234")) {
 					System.out.println("=============Login Succefully==================");
 					do {
 						Scanner sc = new Scanner(System.in);
