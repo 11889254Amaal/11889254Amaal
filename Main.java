@@ -25,9 +25,7 @@ import java.util.Stack;
 import java.util.stream.Stream;
 
 public class Main {
-	
-				
-				      
+
 	public int extraLongFactorials(int facNumber) {
 		if (facNumber == 0) {
 			return 1;
@@ -75,7 +73,12 @@ public class Main {
 		ObjectInputStream fileRead1 = null;
 		FileOutputStream fileName1;
 		ObjectOutputStream fileWrite1 = null;
-		boolean chooseInput=true;
+		boolean chooseInput = true;
+		boolean isExit = true;
+		boolean isHasExit = true;
+		Main ourSchool = new Main();
+		boolean isExitSchool = true;
+		boolean isHasExitAmount = true;
 
 		try {
 			fileName1 = new FileOutputStream("C:\\Users\\Amaal\\OneDrive\\Desktop\\txt\\school2");
@@ -92,55 +95,45 @@ public class Main {
 		System.out.println("+         WELOCOME  TO My System Teacher                         +");
 		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		while (isTeacherRun) {
-			
-			//System.out.println("\n" + "Please Enter your User Name");
-			//String teacherName1 = sc1.next();
-			boolean tryagain=false;
+
+			// System.out.println("\n" + "Please Enter your User Name");
+			// String teacherName1 = sc1.next();
+			boolean tryagain = false;
 			String teacherName1 = null;
-			String teacherID1= null;
-	   
-					   
-						
-					  do {
-					   try {
-							System.out.println("\n" + "Please Enter your User Name");
-							 teacherName1 = sc1.nextLine();
-				        if (!teacherName1.matches("^[a-zA-Z]*$")){
-				        	
-				          // Scanner sc1=new Scanner(System.in);
-				        	System.out.println("You probably entered an invalid String data format");
-				            
-				        }
-				     
-					   }
-					   catch(Exception e) {
-						   System.out.println(e.getMessage());
-				        	tryagain=false;
+			String teacherID1 = null;
 
-					   }
-					   
-					   System.out.println("please Enter your Password");
-						 teacherID1 = sc1.nextLine();
-						
-						try 
-						{ 
-							Integer.parseInt(teacherID1 );
-							System.out.println(teacherID1 + " is a valid String");
-							
-							
-						
-						}
-						
-						catch (NumberFormatException e)  
-						{ 
-							System.out.println(teacherID1 + " is not a valid integer"); 
-						} 
-						
-				    } while (tryagain);
-			
-		
+			do {
+				try {
+					System.out.println("\n" + "Please Enter your User Name");
+					teacherName1 = sc1.nextLine();
+					if (!teacherName1.matches("^[a-zA-Z]*$")) {
 
-			
+						// Scanner sc1=new Scanner(System.in);
+						System.out.println("You probably entered an invalid String data format");
+
+					}
+
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+					tryagain = false;
+
+				}
+
+				System.out.println("please Enter your Password");
+				teacherID1 = sc1.nextLine();
+
+				try {
+					Integer.parseInt(teacherID1);
+					System.out.println(teacherID1 + " is a valid String");
+
+				}
+
+				catch (NumberFormatException e) {
+					System.out.println(teacherID1 + " is not a valid integer");
+				}
+
+			} while (tryagain);
+
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 			String teacherName2 = "Amaal";
@@ -162,54 +155,89 @@ public class Main {
 						menuProgram.put(8, "Exit from Program");
 
 						System.out.println(menuProgram);
-						
+
 						String sel = null;
 
 						do {
-						try {
-							System.out.println("Please Enter your option:\n");
-							 sel = sc.nextLine();
-							Integer.parseInt(sel);
-							System.out.println(sel + " is a valid Number");
-							chooseInput=false;
-						}
-						catch(NumberFormatException e) {
-							System.out.println(sel + " is a invalid Number");
-						}
-						}while(chooseInput);
+							try {
+								System.out.println("Please Enter your option:\n");
+								sel = sc.nextLine();
+								Integer.parseInt(sel);
+								System.out.println(sel + " is a valid Number");
+								chooseInput = false;
+							} catch (NumberFormatException e) {
+								System.out.println(sel + " is a invalid Number");
+							}
+						} while (chooseInput);
 						switch (sel) {
 						case "1":
 
 							System.out.println("===================");
 							// TODO Auto-generated method stub
-
-							boolean isExit = true;
-							boolean isHasExit = true;
-							Main ourSchool = new Main();
-							boolean isExitSchool = true;
-							boolean isHasExitAmount = true;
+							 Student studentDetails=new Student();
+							System.out.println("plz enter your Age");
+							int inputStudentAge=sc.nextInt();
+							studentDetails.setStudentAge(inputStudentAge);
+							studentDetails.Age(inputStudentAge);
+							if(inputStudentAge>3 && inputStudentAge<20) {
+					
 							while (isExitSchool) {
 								School schoolDetails = new School();
+							
 								System.out.println("plz enter your school Name");
 								String inputschoolName = sc.next();
-								stack.push(inputschoolName);
 								schoolDetails.setSchoolName(inputschoolName);
+								stack.push(inputschoolName);
+
+								try {
+									if (!inputschoolName.matches("^[a-zA-Z]*$")) {
+
+										throw new Exception("You probably entered an invalid String data format");
+									}
+								} catch (Exception e) {
+									System.out.println(e.getMessage());
+									continue;
+
+								}
+
 								// SchoolList.add(schoolDetails);
 								// this code to enter name to list
 								isExitSchool = Boolean.TRUE;
 								while (isExit) {
 									// Scanner sc=new Scanner(System.in);
-									Student studentDetails = new Student();
+									
+									
+								   
 									System.out.println("plz enter your Name");
 									String inputStudentName = sc.next();
 									stack.push(inputStudentName);
 									studentDetails.setStudentName(inputStudentName);
+									try {
+										if (!inputStudentName.matches("^[a-zA-Z]*$")) {
+
+											throw new Exception("You probably entered an invalid String data format");
+										}
+									} catch (Exception e) {
+										System.out.println(e.getMessage());
+										continue;
+
+									}
 									isHasExit = Boolean.TRUE;
 
 									System.out.println("plz enter your Email");
 									String inputStudentEmail = sc.next();
 									studentDetails.setStudentEmail(inputStudentEmail);
 									EmailArray.add(inputStudentEmail);
+									try {
+										if (!inputStudentEmail.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+
+											throw new Exception("You probably entered an invalid String data format");
+										}
+									} catch (Exception e) {
+										System.out.println(e.getMessage());
+										continue;
+
+									}
 									while (isHasExit) {
 
 										// this code to enter course and marks to list
@@ -222,13 +250,30 @@ public class Main {
 										courseList1.add(CourseDetails);
 										studentDetails.courseList1.add(CourseDetails);
 
-										System.out.println("Enter marks \n");
-										Marks MarksDetails = new Marks();
-										int inputMarksCourse = sc.nextInt();
-										String inputMarksCourseConvert = String.valueOf(inputMarksCourse);
-										stack.push(inputMarksCourseConvert);
-										MarksDetails.setCourseMarks(inputMarksCourse);
-										CourseDetails.courseMarkss.add(MarksDetails);
+										try {
+											if (!inputStudentCourse.matches("^[a-zA-Z]*$")) {
+
+												throw new Exception(
+														"You probably entered an invalid String data format");
+											}
+										} catch (Exception e) {
+											System.out.println(e.getMessage());
+											continue;
+
+										}
+										try {
+											System.out.println("Enter marks \n");
+											Marks MarksDetails = new Marks();
+											int inputMarksCourse = sc.nextInt();
+											String inputMarksCourseConvert = String.valueOf(inputMarksCourse);
+											stack.push(inputMarksCourseConvert);
+											MarksDetails.setCourseMarks(inputMarksCourse);
+											CourseDetails.courseMarkss.add(MarksDetails);
+										} catch (Exception e) {
+											System.out.println(e.getMessage());
+											continue;
+
+										}
 
 										//// user enter currency
 										while (isHasExitAmount) {
@@ -299,7 +344,16 @@ public class Main {
 								}
 
 							}
-
+                           
+							}
+							else
+							{
+								System.out.println("----------------------------------------------");
+								System.out.println("--------------THANK YOU Exit From Program-----");
+								System.out.println("----------------------------------------------");
+								System.exit(0);
+								break;	
+							}
 							break;
 
 						case "2":

@@ -2,12 +2,15 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Student implements Serializable  {
+public  class Student implements RegisterAge, Serializable  {
 	private String StudentName;
 	//private int StudentId;
 	private String StudentEmail;
-	
+	private int StudentAge;
 	ArrayList<Course> courseList1=new ArrayList<Course>();
+	
+
+	
 	
 	public Student() {
 		// TODO Auto-generated constructor stub
@@ -38,11 +41,36 @@ public class Student implements Serializable  {
 		return StudentName;
 	}
 	
+	
+	
 	public void setStudentEmail(String StudentEmail) {
 		this.StudentEmail=StudentEmail;
 	}
 	public String getStudentEmail() {
 		return StudentEmail;
 	}
+
+	public void setStudentAge(int StudentAge){
+		this.StudentAge=StudentAge;
+	}
+	
+	public int getStudentAge() {
+		return StudentAge;
+	}
+	@Override
+	public void Age(int StudentAge ) {
+		// TODO Auto-generated method stub
+		if((StudentAge>3) && (StudentAge<20))
+		{
+			System.out.println("Student Allegebale to join");
+		}
+		else
+		{
+			System.out.println("Student unllegebale to join");
+
+		}
+		
+	}
+	
 
 }
