@@ -101,11 +101,14 @@ public class Main {
 			boolean tryagain = false;
 			String teacherName1 = null;
 			String teacherID1 = null;
-
+			Teacher TeacherDetails=new Teacher();
 			do {
 				try {
+				
 					System.out.println("\n" + "Please Enter your User Name");
 					teacherName1 = sc1.nextLine();
+					TeacherDetails.ValidatUserName(teacherName1);
+
 					if (!teacherName1.matches("^[a-zA-Z]*$")) {
 
 						// Scanner sc1=new Scanner(System.in);
@@ -121,6 +124,7 @@ public class Main {
 
 				System.out.println("please Enter your Password");
 				teacherID1 = sc1.nextLine();
+				TeacherDetails.ValidatPassword(teacherID1);
 
 				try {
 					Integer.parseInt(teacherID1);

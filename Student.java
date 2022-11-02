@@ -2,7 +2,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public  class Student implements StudentInterface, Serializable  {
+public  class Student implements StudentInterface,Serializable  {
 	private String StudentName;
 	//private int StudentId;
 	private String StudentEmail;
