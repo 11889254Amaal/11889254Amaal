@@ -174,12 +174,7 @@ public class Main {
 
 							System.out.println("===================");
 							// TODO Auto-generated method stub
-							 Student studentDetails=new Student();
-							System.out.println("plz enter your Age");
-							int inputStudentAge=sc.nextInt();
-							studentDetails.setStudentAge(inputStudentAge);
-							studentDetails.Age(inputStudentAge);
-							if(inputStudentAge>3 && inputStudentAge<20) {
+						
 					
 							while (isExitSchool) {
 								School schoolDetails = new School();
@@ -207,12 +202,18 @@ public class Main {
 									// Scanner sc=new Scanner(System.in);
 									
 									
-								   
+									Student studentDetails=new Student();
 									System.out.println("plz enter your Name");
 									String inputStudentName = sc.next();
 									stack.push(inputStudentName);
 									studentDetails.setStudentName(inputStudentName);
-									try {
+									 
+										System.out.println("plz enter your Age");
+										int inputStudentAge=sc.nextInt();
+										studentDetails.setStudentAge(inputStudentAge);
+										studentDetails.Age(inputStudentAge);
+										if(inputStudentAge>3 && inputStudentAge<20) {
+									    try {
 										if (!inputStudentName.matches("^[a-zA-Z]*$")) {
 
 											throw new Exception("You probably entered an invalid String data format");
@@ -331,6 +332,16 @@ public class Main {
 										isHasExit = true;
 									}
 								}
+										else
+										{
+											System.out.println("----------------------------------------------");
+											System.out.println("--------------THANK YOU Exit From Program-----");
+											System.out.println("----------------------------------------------");
+											System.exit(0);
+											break;	
+										}		
+								
+								}
 								System.out.println("Do You want To Add school press 1 if not press 0 ");
 								int schoolOutput = sc.nextInt();
 								if (schoolOutput == 1) {
@@ -343,16 +354,9 @@ public class Main {
 									isExitSchool = false;
 								}
 
-							}
-                           
-							}
-							else
-							{
-								System.out.println("----------------------------------------------");
-								System.out.println("--------------THANK YOU Exit From Program-----");
-								System.out.println("----------------------------------------------");
-								System.exit(0);
-								break;	
+							
+							
+							
 							}
 							break;
 
