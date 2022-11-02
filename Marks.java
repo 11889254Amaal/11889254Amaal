@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-public class Marks {
+public class Marks implements MarksInterface {
 	private int courseMarks;
 	 void  setCourseMarks(int courseMarks)
 		{
@@ -19,4 +19,64 @@ public class Marks {
 	 int getCourseMarks() {
 		 return courseMarks;
 	 }
+
+	@Override
+	public void CheckDegree(int inputMarksCourse) {
+		// TODO Auto-generated method stub
+		if(courseMarks<40)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("=======Fail==========");
+		}
+		else if(courseMarks>=40 && courseMarks<=50)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("=======Pass==========");
+
+		}
+		else if(courseMarks>50 && courseMarks<=55)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("===========C=========");
+		}
+		else if(courseMarks>55 && courseMarks<=60)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("==========B==========");
+
+		}
+		else if(courseMarks>60 && courseMarks<=70)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("==========B+=========");
+
+		}
+		else if(courseMarks>70 && courseMarks<=80)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("==========A==========");
+
+		}	
+		else if(courseMarks>80 && courseMarks<=90)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("=========A+==========");
+
+		}
+		else if(courseMarks>90 && courseMarks<=100)
+		{
+			System.out.println("====Student Degree===");
+
+			System.out.println("==========A==========");
+
+		}
+		
+	}
 }

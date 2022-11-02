@@ -272,6 +272,7 @@ public class Main {
 											int inputMarksCourse = sc.nextInt();
 											String inputMarksCourseConvert = String.valueOf(inputMarksCourse);
 											stack.push(inputMarksCourseConvert);
+											MarksDetails.CheckDegree(inputMarksCourse);
 											MarksDetails.setCourseMarks(inputMarksCourse);
 											CourseDetails.courseMarkss.add(MarksDetails);
 										} catch (Exception e) {
