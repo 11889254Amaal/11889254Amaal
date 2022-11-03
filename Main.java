@@ -26,13 +26,7 @@ import java.util.stream.Stream;
 
 public class Main {
 
-	public int extraLongFactorials(int facNumber) {
-		if (facNumber == 0) {
-			return 1;
-		} else {
-			return (facNumber * extraLongFactorials(facNumber - 1));
-		}
-	}
+
 
 	static ArrayList<School> SchoolList = new ArrayList<>();
 
@@ -457,11 +451,11 @@ public class Main {
 									System.out.println("----------------------------------------------");
 									System.out.println("----------------- fACTORIAL-------------------");
 									System.out.println("----------------------------------------------");
-									System.out.println("plaz enter number to cal factorial");
+									CalculateFactrial calFacturial=new CalculateFactrial();
+								     System.out.println("plz enter Any number to calculat fACTORIAL ");
 									int facNumber = sc.nextInt();
-
 									System.out.println("Factorial of :   " + facNumber + "  is  "
-											+ man.extraLongFactorials(facNumber));
+											+ calFacturial.extraLongFactorials(facNumber));
 									break;
 								case 2:
 									System.out.println("----------------------------------------------");
