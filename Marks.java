@@ -4,6 +4,20 @@ import java.util.ArrayList;
 
 public class Marks implements MarksInterface {
 	private int courseMarks;
+	
+	  protected void finalize() throws Throwable {
+		    try {
+		      System.out.println("Inside finalize method of Marks Class.");
+		    } 
+		    catch (Throwable e) {
+		      throw e;
+		    } 
+		    finally {
+		      System.out.println("Calling finalize method of the Object class");
+
+		      // Calling finalize() of Object class
+		      super.finalize();
+		    }}
 	 void  setCourseMarks(int courseMarks)
 		{
 			if(courseMarks>0 && courseMarks<100)

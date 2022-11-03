@@ -3,7 +3,19 @@ public class Teacher implements LoginInterfaceTeacher {
 	private String teacherName1;
 	private String teacherID1;
 
+	 protected void finalize() throws Throwable {
+		    try {
+		      System.out.println("Inside finalize method of Teacher Class.");
+		    } 
+		    catch (Throwable e) {
+		      throw e;
+		    } 
+		    finally {
+		      System.out.println("Calling finalize method of the Object class");
 
+		      // Calling finalize() of Object class
+		      super.finalize();
+		    }}
 	@Override
 	public void ValidatUserName(String teacherName1) {
 		// TODO Auto-generated method stub

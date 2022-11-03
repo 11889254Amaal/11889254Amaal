@@ -8,6 +8,20 @@ public class School  {
 	Scanner sc=new Scanner(System.in);
 	static ArrayList<Student> studentList = new ArrayList<>();
 	
+	  protected void finalize() throws Throwable {
+		    try {
+		      System.out.println("Inside finalize method of School Class.");
+		    } 
+		    catch (Throwable e) {
+		      throw e;
+		    } 
+		    finally {
+		      System.out.println("Calling finalize method of the Object class");
+
+		      // Calling finalize() of Object class
+		      super.finalize();
+		    }}
+	
     void setArrayListStudent(ArrayList<Student> studentList) {
 		 this.studentList=studentList;
 		 

@@ -10,7 +10,19 @@ public  class Student implements StudentInterface,Serializable  {
 	ArrayList<Course> courseList1=new ArrayList<Course>();
 	
 
-	
+	  protected void finalize() throws Throwable {
+		    try {
+		      System.out.println("Inside finalize method of Student Class.");
+		    } 
+		    catch (Throwable e) {
+		      throw e;
+		    } 
+		    finally {
+		      System.out.println("Calling finalize method of the Object class");
+
+		      // Calling finalize() of Object class
+		      super.finalize();
+		    }}
 	
 	public Student() {
 		// TODO Auto-generated constructor stub

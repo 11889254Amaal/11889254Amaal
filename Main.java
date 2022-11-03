@@ -45,7 +45,7 @@ public class Main {
 		return SchoolList;
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Throwable {
 		ArrayList<Course> courseList1 = new ArrayList<>();
 		ArrayList<Marks> marksList = new ArrayList<>();
 		ArrayList<Student> studentList = new ArrayList<>();
@@ -102,6 +102,7 @@ public class Main {
 			String teacherName1 = null;
 			String teacherID1 = null;
 			Teacher TeacherDetails=new Teacher();
+			
 			do {
 				try {
 				
@@ -137,7 +138,7 @@ public class Main {
 				}
 
 			} while (tryagain);
-
+			TeacherDetails.finalize();
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 			String teacherName2 = "Amaal";
@@ -182,9 +183,9 @@ public class Main {
 					
 							while (isExitSchool) {
 								School schoolDetails = new School();
-							
 								System.out.println("plz enter your school Name");
 								String inputschoolName = sc.next();
+								schoolDetails.finalize();
 								schoolDetails.setSchoolName(inputschoolName);
 								stack.push(inputschoolName);
 
@@ -207,6 +208,7 @@ public class Main {
 									
 									
 									Student studentDetails=new Student();
+									studentDetails.finalize();
 									System.out.println("plz enter your Name");
 									String inputStudentName = sc.next();
 									stack.push(inputStudentName);
@@ -269,6 +271,7 @@ public class Main {
 										try {
 											System.out.println("Enter marks \n");
 											Marks MarksDetails = new Marks();
+											MarksDetails.finalize();
 											int inputMarksCourse = sc.nextInt();
 											String inputMarksCourseConvert = String.valueOf(inputMarksCourse);
 											stack.push(inputMarksCourseConvert);
