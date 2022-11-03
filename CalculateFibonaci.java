@@ -1,5 +1,6 @@
 
 public class CalculateFibonaci {
+	//create mathod
 	int i;
 	int n1=1;
 	int n2=2;
